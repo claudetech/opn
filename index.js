@@ -2,7 +2,7 @@
 var path = require('path');
 var execFile = require('child_process').execFile;
 
-module.exports = function (target, app, cb) {
+module.exports = function (target, app, options, cb) {
 	if (typeof target !== 'string') {
 		throw new Error('Expected a `target`');
 	}
@@ -10,6 +10,15 @@ module.exports = function (target, app, cb) {
 	if (typeof app === 'function') {
 		cb = app;
 		app = null;
+		options = {};
+	} else if (typeof app === 'object') {
+		app = null;
+		cb = options;
+		options = app;
+	}
+	if (typeof options === 'function') {
+		cb = options;
+		options = {};
 	}
 
 	var cmd;
@@ -20,6 +29,10 @@ module.exports = function (target, app, cb) {
 
 		if (cb) {
 			args.push('-W');
+		}
+
+		if (options.keepFocus) {
+			args.push('-g');
 		}
 
 		if (app) {
