@@ -1,16 +1,16 @@
 {
-  "name": "opn",
-  "version": "1.0.0",
-  "description": "A better node-open. Opens stuff like websites, files, executables. Cross-platform.",
+  "name": "opn-bg",
+  "version": "0.1.0",
+  "description": "Fork of sindresorhus/opn",
   "license": "MIT",
-  "repository": "sindresorhus/opn",
+  "repository": "claudetech/opn",
   "bin": {
     "opn": "cli.js"
   },
   "author": {
-    "name": "Sindre Sorhus",
-    "email": "sindresorhus@gmail.com",
-    "url": "http://sindresorhus.com"
+    "name": "Daniel Perez",
+    "email": "tuvistavie@gmail.com",
+    "url": "http://tuvistavie.com"
   },
   "engines": {
     "node": ">=0.10.0"
