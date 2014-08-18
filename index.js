@@ -12,14 +12,16 @@ module.exports = function (target, app, options, cb) {
 		app = null;
 		options = {};
 	} else if (typeof app === 'object') {
-		app = null;
 		cb = options;
 		options = app;
+		app = null;
 	}
 	if (typeof options === 'function') {
 		cb = options;
 		options = {};
 	}
+
+	options = options || {};
 
 	var cmd;
 	var args = [];
